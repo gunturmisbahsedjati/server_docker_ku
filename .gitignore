@@ -1,3 +1,4 @@
 *.sql.gz
-/www/*
+/www/pelaporan_bbpmp
+/www/buku_tamu_ban
 /mysql/*
