@@ -1,3 +1,5 @@
 # server_docker_ku
-1. setting mysql\n
-phpmyadmin => variables => sql mode => remove ONLY_FULL_GROUP_BY
+<ul>
+  <li>setting mysql<br>phpmyadmin => variables => sql mode => remove ONLY_FULL_GROUP_BY</li>
+</ul>
+
