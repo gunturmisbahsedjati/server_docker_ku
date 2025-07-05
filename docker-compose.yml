@@ -11,6 +11,7 @@ services:
       - ./www:/var/www/html
     networks:
       - banpdm_network
+    restart: always
     depends_on:
       - db
 
@@ -19,13 +20,15 @@ services:
     container_name: mysql_banpdm
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: company
-      # MYSQL_USER: root
+      MYSQL_DATABASE: animasiku_studio
+    # MYSQL_USER: root
     ports:
       - 9482:3306
     volumes:
       - volume-db:/var/lib/mysql
     restart: always
+    # command: --sql-mode="NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+    command: mysqld --sql_mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
     networks:
       - banpdm_network
 
